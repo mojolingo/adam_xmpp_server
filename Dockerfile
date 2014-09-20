@@ -6,9 +6,6 @@ MAINTAINER Mojo Lingo LLC <ops@mojolingo.com>
 ADD ./ejabberd.yml.tpl /opt/ejabberd/conf/ejabberd.yml.tpl
 
 # extauth script
-RUN apt-get install -y software-properties-common
-RUN apt-add-repository ppa:brightbox/ruby-ng
-RUN apt-get update
-RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y ruby2.1
+RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y ruby
 ADD ./ejabberd_auth.rb /opt/ejabberd/conf/ejabberd_auth.rb
 RUN chmod +x /opt/ejabberd/conf/ejabberd_auth.rb
