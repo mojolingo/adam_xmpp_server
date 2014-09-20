@@ -3,7 +3,7 @@ FROM benlangfeld/docker-ejabberd:latest
 MAINTAINER Mojo Lingo LLC <ops@mojolingo.com>
 
 # config
-ADD ./ejabberd.yml.erb /opt/ejabberd/conf/ejabberd.yml.erb
+ADD ./ejabberd.yml.tpl /opt/ejabberd/conf/ejabberd.yml.tpl
 
 # extauth script
 RUN apt-get install -y software-properties-common
