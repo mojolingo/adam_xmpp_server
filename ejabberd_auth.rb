@@ -37,14 +37,14 @@ class Auth
 
   def conn
     @conn ||= begin
-      uri = URI("<%= ENV['MEMORY_BASE_URL'] %>")
+      uri = URI(ENV['MEMORY_BASE_URL'])
       Net::HTTP.start(uri.host, uri.port)
     end
   end
 
   def get_json(path)
     req = Net::HTTP::Get.new(path)
-    req.basic_auth "<%= ENV['INTERNAL_USERNAME'] %>", "<%= ENV['INTERNAL_PASSWORD'] %>"
+    req.basic_auth ENV['INTERNAL_USERNAME'], ENV['INTERNAL_PASSWORD']
 
     case response = conn.request(req)
     when Net::HTTPNotFound
