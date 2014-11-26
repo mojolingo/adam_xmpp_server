@@ -1,6 +1,6 @@
 # adam_xmpp_server
 
-ejabberd server version 14.07 based on [benlangfeld/docker-ejabberd](https://registry.hub.docker.com/u/benlangfeld/docker-ejabberd/). Extended with authentication against [Adam's Memory API](https://github.com/mojolingo/Adam.Snark.Rabbit/blob/master/memory/README.md#adam-memory).
+ejabberd server version 14.07 based on [rroemhild/ejabberd](https://registry.hub.docker.com/u/rroemhild/ejabberd/). Extended with authentication against [Adam's Memory API](https://github.com/mojolingo/Adam.Snark.Rabbit/blob/master/memory/README.md#adam-memory).
 
 ## Usage
 
