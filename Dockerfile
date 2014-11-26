@@ -1,4 +1,4 @@
-FROM benlangfeld/docker-ejabberd:latest
+FROM rroemhild/ejabberd
 
 MAINTAINER Mojo Lingo LLC <ops@mojolingo.com>
 

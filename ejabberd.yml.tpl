@@ -36,7 +36,7 @@
 ## 4: Info
 ## 5: Debug
 ##
-loglevel: 4
+loglevel: {{ env['LOGLEVEL'] or 4 }}
 
 ##
 ## watchdog_admins: Only useful for developers: if an ejabberd process
@@ -84,8 +84,8 @@ listen:
     ## certificate, specify the full path to the
     ## file and uncomment this line:
     ##
-    ## certfile: "/path/to/ssl.pem"
-    ## starttls: true
+    certfile: "/opt/ejabberd/ssl/xmpp_domain.pem"
+    starttls: true
     max_stanza_size: 65536
     shaper: c2s_shaper
     access: c2s
@@ -131,18 +131,20 @@ listen:
     http_bind: true
     ## register: true
     captcha: true
+    tls: true
+    certfile: "/opt/ejabberd/ssl/host.pem"
 
 ##
 ## s2s_use_starttls: Enable STARTTLS + Dialback for S2S connections.
 ## Allowed values are: false optional required required_trusted
 ## You must specify a certificate file.
 ##
-## s2s_use_starttls: optional
+s2s_use_starttls: optional
 
 ##
 ## s2s_certfile: Specify a certificate file.
 ##
-## s2s_certfile: "/path/to/ssl.pem"
+s2s_certfile: "/opt/ejabberd/ssl/host.pem"
 
 ##
 ## domain_certfile: Specify a different certificate for each served hostname.
@@ -353,7 +355,7 @@ acl:
   ##
   admin:
     user:
-      - "admin": "localhost"
+      - "admin": "{{ env['XMPP_DOMAIN'] or "localhost" }}"
   ##     - "ermine": "example.org"
   ##
   ## Blocked users
