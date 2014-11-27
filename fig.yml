@@ -1,0 +1,12 @@
+xmpp:
+  build: .
+  ports:
+    - "5222:5222"
+    - "5269:5269"
+    - "5280:5280"
+  environment:
+    ERL_OPTIONS: "-noshell"
+    XMPP_DOMAIN: local.adamrabbit.net
+    MEMORY_BASE_URL: http://local.adamrabbit.net
+    INTERNAL_USERNAME: internal
+    INTERNAL_PASSWORD: fj8j4893jgg9jg9
