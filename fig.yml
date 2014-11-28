@@ -10,3 +10,6 @@ xmpp:
     MEMORY_BASE_URL: http://local.adamrabbit.net
     INTERNAL_USERNAME: internal
     INTERNAL_PASSWORD: fj8j4893jgg9jg9
+    WHITELISTED_USERNAME: adam
+    WHITELISTED_PASSWORD: abc123
+    LOGLEVEL: 5
